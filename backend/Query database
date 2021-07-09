@@ -1,0 +1,20 @@
+create database kuis;
+\c kuis;
+
+create type NoRak as enum
+('1a', '2a', '3a', '1b', '2b', '3b');
+
+create table Gudang(
+Buku varchar(25) primary key not null unique, 
+Author varchar(25) not null,
+Jenis varchar(10) not null,
+Stok int not null, 
+"harga_jual" int not null,
+Rak NoRak not null
+);
+
+insert into Gudang values ('Guru Aini', 'Andrea Hirata', 'Novel', 10, 100000, '1a');
+insert into Gudang values ('Atomic Habits', 'James Clear', 'Ilmiah', 20, 70000, '1a');
+insert into Gudang values ('Laskar Pelangi', 'Andrea Hirata', 'Novel', 10, 100000, '2b');
+insert into Gudang values ('Dear Nathan', 'Erisca Febriani', 'Novel', 30, 100000, '2b');
+
